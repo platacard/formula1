@@ -37,7 +37,6 @@ var CGameBase = function (oData, iLevel) {
   this._oLevelBuilder;
 
   this.raceTimer;
-  this.raceTime = {};
 
   s_oGame = this;
 
@@ -117,18 +116,18 @@ CGameBase.prototype._init = function (iLevel) {
     this._oRumbleDrawingLevel,
     this._oGrassDrawingLevel,
     this._oLaneDrawingLevel,
-    this._oRumbleStrokeLevel,
+    this._oRumbleStrokeLevel
   );
 
   this._oPlayer = new CPlayer(
     CANVAS_WIDTH / 2,
     CANVAS_HEIGHT - 180,
-    this._oElementContainer,
+    this._oElementContainer
   );
   this._oPlayer.addEventListener(
     ON_PLAYER_PASSED_LAP,
     this.playerLapPassed,
-    this,
+    this
   );
   //this._oPlayer.addEventListener(ON_PLAYER_HIT, this._onPlayerHit, this);
   //this._oPlayer.addEventListener(ON_PLAYER_HIT_WHILE_COLLIDED, this._onPlayerHitWhileCollided, this);
@@ -148,7 +147,7 @@ CGameBase.prototype._init = function (iLevel) {
     this._aCars,
     this._aEnemy,
     this._oElementContainer,
-    iLevel,
+    iLevel
   );
 
   this.resetParams();
@@ -434,70 +433,61 @@ CGameBase.prototype.setResume = function () {
   s_oGame._bStartGame = true;
 };
 
-CGameBase.prototype.update = (() => {
-  let millisecondsElapsed = 0;
+CGameBase.prototype.update = function () {
+  var iDt = 1 / s_iCurFps;
 
-  return function () {
-    var iDt = 1 / s_iCurFps;
-
-    switch (this._iGameState) {
-      case STATE_GAME_START: {
-        if (this._bStartGame) {
-          this._countDown();
-        }
-
-        break;
+  switch (this._iGameState) {
+    case STATE_GAME_START: {
+      if (this._bStartGame) {
+        this._countDown();
       }
-      case STATE_GAME_RACE: {
-        if (!this._bStartGame) {
-          return;
-        }
 
-        this._oPlayer.update(iDt);
-
-        this.updateRace(iDt);
-        this.raceTimer =
-          this.raceTimer ||
-          setInterval(() => {
-            requestAnimationFrame(() => {
-              const ellapsedTime = ++millisecondsElapsed;
-              this.raceTime[s_oGame._iLevel] = ellapsedTime;
-              this._oInterface.refreshRaceTime(ellapsedTime);
-            });
-          }, 1);
-
-        break;
-      }
-      case STATE_GAME_END: {
-        this._oPlayer.update(iDt);
-        this._oPlayer.autoPilot();
-
-        this.updateOpponents(iDt);
-
-        clearInterval(this.raceTimer);
-
-        break;
-      }
+      break;
     }
+    case STATE_GAME_RACE: {
+      if (!this._bStartGame) {
+        return;
+      }
 
-    this._oInterface.refreshSpeed(
-      this._oPlayer.getCurSpeed() * PLAYER_SPEED_CONVERSION_RATIO,
-    );
-    this._oInterface.refreshMiniMap(this._oPlayer.getPlayerSegment().index);
+      this._oPlayer.update(iDt);
 
-    this._oRoad.update(this._oPlayer.getPosition());
+      this.updateRace(iDt);
+      console.log({ s_iTimeElaps, s_iCntTime });
+      this.raceTimer =
+        this.raceTimer ||
+        setInterval(() => {
+          this._oInterface.refreshRaceTime(new Date().getTime());
+        }, 1000);
 
-    this._oHorizon.move(
-      this.getWorldCameraPos() /*, this._oRoad.getLastVisibleSegment().clip*/,
-    );
+      break;
+    }
+    case STATE_GAME_END: {
+      this._oPlayer.update(iDt);
+      this._oPlayer.autoPilot();
 
-    this._bCollision = false;
-    ///CHECK COLLISION
-    this._checkCollisions();
+      this.updateOpponents(iDt);
 
-    this._oPrevSegment = this._oPlayer.getPlayerSegment();
-  };
-})();
+      break;
+    }
+  }
+
+  this._oInterface.refreshSpeed(
+    this._oPlayer.getCurSpeed() * PLAYER_SPEED_CONVERSION_RATIO
+  );
+  this._oInterface.refreshMiniMap(this._oPlayer.getPlayerSegment().index);
+
+  this._oRoad.update(this._oPlayer.getPosition());
+
+  this._oHorizon.move(
+    this.getWorldCameraPos() /*, this._oRoad.getLastVisibleSegment().clip*/
+  );
+
+  this._bCollision = false;
+  ///CHECK COLLISION
+  this._checkCollisions();
+
+  this._oPrevSegment = this._oPlayer.getPlayerSegment();
+};
 
 CGameBase.prototype._checkCollisions = function () {
   var iPlayerSegment = this._oPlayer.getPlayerSegment().index;
@@ -530,7 +520,7 @@ CGameBase.prototype._checkAmbientCollision = function (segment) {
       this._oPlayer.getPlayerWidth(),
       oElement.getCollisor().center,
       oElement.getCollisor().width,
-      1,
+      1
     );
     if (bOverlap) {
       this.checkDamage();
@@ -539,7 +529,7 @@ CGameBase.prototype._checkAmbientCollision = function (segment) {
       var oSegment = this._oPlayer.getPlayerSegment();
 
       this._oPlayer.setPosition(
-        Util.increase(oSegment.p1.world.z, -PLAYER_Z_FROMCAMERA, TRACK_LENGTH),
+        Util.increase(oSegment.p1.world.z, -PLAYER_Z_FROMCAMERA, TRACK_LENGTH)
       );
 
       this._bCollision = true;
@@ -562,7 +552,7 @@ CGameBase.prototype._checkEnemiesCollision = function (segment) {
       this._oPlayer.getPlayerWidth(),
       oEnemy.getOffset(),
       iEnemyW,
-      0.6,
+      0.6
     );
 
     var bStateCondition =
@@ -576,7 +566,7 @@ CGameBase.prototype._checkEnemiesCollision = function (segment) {
       if (bSpeedToCheckDamage) {
         this.checkDamage();
         this._oPlayer.setCurSpeed(
-          oEnemy.getSpeed() * (oEnemy.getSpeed() / this._oPlayer.getCurSpeed()),
+          oEnemy.getSpeed() * (oEnemy.getSpeed() / this._oPlayer.getCurSpeed())
         );
 
         this._bCollision = true;
@@ -617,7 +607,7 @@ CGameBase.prototype.getRelativeEnemyZPosToPlayer = function (oEnemy) {
 CGameBase.prototype.setPlayerDamage = function (
   iAmount,
   iRelativeXPos,
-  iRelativeZ,
+  iRelativeZ
 ) {
   if (this._bDamaged) {
     return;
