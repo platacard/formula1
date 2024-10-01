@@ -18,6 +18,7 @@
         <script type="text/javascript" src="js/lib/platform.js"></script>
         <script type="text/javascript" src="js/lib/ios_fullscreen.js"></script>
         <script type="text/javascript" src="js/lib/howler.min.js"></script>
+        <script type="text/javascript" src="js/lib/CTimeFormatter.js"></script>
         <script type="text/javascript" src="js/lib/ctl_utils.js"></script>
         <script type="text/javascript" src="js/lib/sprite_lib.js"></script>
         <script type="text/javascript" src="js/lib/CTextButton.js"></script>
@@ -98,6 +99,7 @@
                             if(getParamValue('ctl-arcade') === "true"){
                                 parent.__ctlArcadeStartSession();
                             }
+                            window.parent.postMessage({ type: "START_F1_SESSION" }, "*");
                             //...ADD YOUR CODE HERE EVENTUALLY
                     });
                      
@@ -105,6 +107,7 @@
                            if(getParamValue('ctl-arcade') === "true"){
                                parent.__ctlArcadeEndSession();
                            }
+                           window.parent.postMessage({ type: "END_F1_SESSION" }, "*");
                            //...ADD YOUR CODE HERE EVENTUALLY
                     });
 
@@ -112,13 +115,22 @@
                            if(getParamValue('ctl-arcade') === "true"){
                                parent.__ctlArcadeRestartLevel({level:iLevel});
                            }
+                           window.parent.postMessage({ type: "RESTART_F1_SESSION" }, "*");
                            //...ADD YOUR CODE HERE EVENTUALLY
                     });
 
-                    $(oMain).on("save_score", function(evt,iScore, szMode) {
+                    $(oMain).on("save_score", function(evt,iScore,szMode) {
                            if(getParamValue('ctl-arcade') === "true"){
-                               parent.__ctlArcadeSaveScore({score:iScore, mode: szMode});
+                               parent.__ctlArcadeSaveScore({score:iScore.score, mode: szMode});
                            }
+                         
+                           window.parent.postMessage({
+                                type: "SAVE_F1_SCORE",
+                                score: iScore.score,
+                                raceTime: iScore.raceTime
+                            },
+                            "*",
+                            );
                            //...ADD YOUR CODE HERE EVENTUALLY
                     });
 

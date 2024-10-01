@@ -1,4 +1,4 @@
-function CNextLevelPanel(iRank, iScore, iLevel){
+function CNextLevelPanel(iRank, iScore, iLevel, raceTime){
     
     var _oPanelContainer;
     var _oFade;
@@ -73,17 +73,17 @@ function CNextLevelPanel(iRank, iScore, iLevel){
         oScoreContainer.y = -50;
         _oPanelContainer.addChild(oScoreContainer);
         
-        var oSprite = s_oSpriteLibrary.getSprite('star');
-        var oStar = createBitmap(oSprite);
-        oStar.regX = oSprite.width/2;
-        oStar.regY = oSprite.height/2;
-        oScoreContainer.addChild(oStar);
+        // var oSprite = s_oSpriteLibrary.getSprite('star');
+        // var oStar = createBitmap(oSprite);
+        // oStar.regX = oSprite.width/2;
+        // oStar.regY = oSprite.height/2;
+        // oScoreContainer.addChild(oStar);
         
         var oScoreText =  new CTLText(oScoreContainer, 
                     50, -20, 150, 50, 
                     50, "left", "#fff", PRIMARY_FONT, 1,
                     0, 0,
-                    "0",
+                    formatTime(raceTime),
                     true, true, false,
                     false );
                     oScoreText.setStroke(10,"#000");
@@ -95,7 +95,7 @@ function CNextLevelPanel(iRank, iScore, iLevel){
         
         
         new createjs.Tween.get(_oPanelContainer).to({y:CANVAS_HEIGHT/2},500, createjs.Ease.quartIn).call(function(){
-            oScoreText.roll(iScore, 5000,createjs.Ease.cubicOut);
+            // oScoreText.roll(formatTime(raceTime), 5000,createjs.Ease.cubicOut);
         });
                     
 
