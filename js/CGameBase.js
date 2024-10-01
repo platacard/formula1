@@ -36,7 +36,8 @@ var CGameBase = function (oData, iLevel) {
 
   this._oLevelBuilder;
 
-  this.raceTimer;
+  this.raceTimer = 0;
+  this.raceTime = 0;
 
   s_oGame = this;
 
@@ -301,6 +302,7 @@ CGameBase.prototype.resetParams = function () {
   }
 
   this._iGameState = STATE_GAME_START;
+  this.raceTime = 0;
   this._iScore = 0;
   this._iTimeElaps = LEVEL_INFO[this._iLevel].time;
   this._iStartCountDown = START_COUNTDOWN;
@@ -452,12 +454,13 @@ CGameBase.prototype.update = function () {
       this._oPlayer.update(iDt);
 
       this.updateRace(iDt);
-      console.log({ s_iTimeElaps, s_iCntTime });
       this.raceTimer =
         this.raceTimer ||
         setInterval(() => {
-          this._oInterface.refreshRaceTime(new Date().getTime());
-        }, 1000);
+          requestAnimationFrame(() =>
+            this._oInterface.refreshRaceTime(++this.raceTime)
+          );
+        }, 1);
 
       break;
     }
@@ -466,6 +469,9 @@ CGameBase.prototype.update = function () {
       this._oPlayer.autoPilot();
 
       this.updateOpponents(iDt);
+      clearInterval(this.raceTimer);
+      this.raceTimer = 0;
+      // this.resetParams();
 
       break;
     }

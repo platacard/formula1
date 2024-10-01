@@ -45,7 +45,7 @@ function CLapIndicator(iX, iY, oParentContainer){
 
       _oRaceTime = new CTLText(
         _oContainer,
-        iTextX * 2.5,
+        iTextX * 3.5,
         iTextY - iHeight / 2,
         iWidth,
         iHeight,
@@ -56,7 +56,7 @@ function CLapIndicator(iX, iY, oParentContainer){
         1,
         2,
         2,
-        sprintf("%s:%s", 0, 0),
+        sprintf("%s:%s:%s", "00", "00", "000"),
         true,
         true,
         false,
@@ -81,12 +81,7 @@ function CLapIndicator(iX, iY, oParentContainer){
     };
 
     this.refreshRaceTime = function (iMilliseconds) {
-      var iSeconds = Math.floor(iMilliseconds / 1000);
-      var iMinutes = Math.floor(iSeconds / 60);
-      iSeconds -= iMinutes * 60;
-
-      var szText = sprintf("%s:%s", iMinutes, iSeconds);
-      _oRaceTime.refreshText(szText);
+      _oRaceTime.refreshText(formatTime(iMilliseconds));
     };
     
     this.setVisible = function(bVal){

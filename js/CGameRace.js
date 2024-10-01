@@ -153,6 +153,7 @@ CGameRace.prototype.playerLapCompleted = function(iCurLap){
     this._iCurPlayerLap = iCurLap;
     if(this._iCurPlayerLap >= this._iTotLap){
         ///END RACE
+        this._iCurPlayerLap = this._iTotLap;
         this.trackCompleted();
     }else {
 
@@ -218,7 +219,7 @@ CGameRace.prototype.trackCompleted = function(){
     //////NEXTLEVELPANEL
     if(iPlayerRank <= MIN_RANK_FOR_WIN){
         this._iScore = Math.floor(POINTS_PER_RANK[iPlayerRank-1]);
-        var oNextLevelPanel = new CNextLevelPanel(iPlayerRank, this._iScore, this._iLevel); 
+        var oNextLevelPanel = new CNextLevelPanel(iPlayerRank, this._iScore, this._iLevel, this.raceTime); 
         
          
         
@@ -232,7 +233,10 @@ CGameRace.prototype.trackCompleted = function(){
             iTotalScore += s_aLevelScore[i];
 
         }
-        $(s_oMain).trigger("save_score", iTotalScore);     
+        $(s_oMain).trigger("save_score", {
+          score: iTotalScore,
+          raceTime: this.raceTime,
+        });     
         
     }else{
 
