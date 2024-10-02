@@ -8,7 +8,5 @@ function formatTimeCustomly(iMilliseconds) {
   const szSeconds = String(iSeconds).padStart(2, "0");
   const szMillis = String(iMillis).padStart(3, "0");
 
-  console.log("formatTime called", szMillis);
-
   return `${szMinutes}:${szSeconds}:${szMillis}`;
 }
