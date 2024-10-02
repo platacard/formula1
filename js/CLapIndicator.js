@@ -1,94 +1,92 @@
-function CLapIndicator(iX, iY, oParentContainer){
-    var _oContainer;
-    var _oText;
-    
-    var _pStartPos;
-    
-    this._init = function () {
-      _pStartPos = { x: iX, y: iY };
+function CLapIndicator(iX, iY, oParentContainer) {
+  var _oContainer;
+  var _oText;
 
-      _oContainer = new createjs.Container();
-      _oContainer.x = iX;
-      _oContainer.y = iY;
-      oParentContainer.addChild(_oContainer);
+  var _pStartPos;
 
-      var oSprite = s_oSpriteLibrary.getSprite("lap_panel");
-      var oBg = createBitmap(oSprite);
-      oBg.regX = oSprite.width / 2;
-      oBg.regY = 0;
-      _oContainer.addChild(oBg);
+  this._init = function () {
+    _pStartPos = { x: iX, y: iY };
 
-      var iWidth = 140;
-      var iHeight = 70;
-      var iTextX = 50;
-      var iTextY = 54;
-      _oText = new CTLText(
-        _oContainer,
-        iTextX - iWidth / 2,
-        iTextY - iHeight / 2,
-        iWidth,
-        iHeight,
-        70,
-        "center",
-        "#fff",
-        PRIMARY_FONT,
-        1,
-        2,
-        2,
-        sprintf(TEXT_LAP, 0, 0),
-        true,
-        true,
-        false,
-        false
-      );
-      _oText.setStroke(10, "#000");
+    _oContainer = new createjs.Container();
+    _oContainer.x = iX;
+    _oContainer.y = iY;
+    oParentContainer.addChild(_oContainer);
 
-      _oRaceTime = new CTLText(
-        _oContainer,
-        iTextX * 3.5,
-        iTextY - iHeight / 2,
-        iWidth,
-        iHeight,
-        70,
-        "center",
-        "#fff",
-        PRIMARY_FONT,
-        1,
-        2,
-        2,
-        sprintf("%s:%s:%s", "00", "00", "000"),
-        true,
-        true,
-        false,
-        false
-      );
-      _oRaceTime.setStroke(10, "#000");
-    };
+    var oSprite = s_oSpriteLibrary.getSprite("lap_panel");
+    var oBg = createBitmap(oSprite);
+    oBg.regX = oSprite.width / 2;
+    oBg.regY = 0;
+    _oContainer.addChild(oBg);
 
-    this.unload = function () {
-      oParentContainer.removeChild(_oContainer);
-    };
+    var iWidth = 140;
+    var iHeight = 70;
+    var iTextX = 50;
+    var iTextY = 54;
+    _oText = new CTLText(
+      _oContainer,
+      iTextX - iWidth / 2,
+      iTextY - iHeight / 2,
+      iWidth,
+      iHeight,
+      70,
+      "center",
+      "#fff",
+      PRIMARY_FONT,
+      1,
+      2,
+      2,
+      sprintf(TEXT_LAP, 0, 0),
+      true,
+      true,
+      false,
+      false,
+    );
+    _oText.setStroke(10, "#000");
 
-    this.setPosition = function () {
-      _oContainer.x = _pStartPos.x;
-      _oContainer.y = _pStartPos.y + s_iOffsetY;
-    };
+    _oRaceTime = new CTLText(
+      _oContainer,
+      iTextX * 3.5,
+      iTextY - iHeight / 2,
+      iWidth,
+      iHeight,
+      70,
+      "center",
+      "#fff",
+      PRIMARY_FONT,
+      1,
+      2,
+      2,
+      sprintf("%s:%s:%s", "00", "00", "000"),
+      true,
+      true,
+      false,
+      false,
+    );
+    _oRaceTime.setStroke(10, "#000");
+  };
 
-    this.refreshLap = function (iCur, iTot) {
-      var szText = sprintf(TEXT_LAP, iCur, iTot);
+  this.unload = function () {
+    oParentContainer.removeChild(_oContainer);
+  };
 
-      _oText.refreshText(szText);
-    };
+  this.setPosition = function () {
+    _oContainer.x = _pStartPos.x;
+    _oContainer.y = _pStartPos.y + s_iOffsetY;
+  };
 
-    this.refreshRaceTime = function (iMilliseconds) {
-      _oRaceTime.refreshText(formatTime(iMilliseconds));
-    };
-    
-    this.setVisible = function(bVal){
-        _oContainer.visible = bVal;
-    };
-    
-    this._init();
+  this.refreshLap = function (iCur, iTot) {
+    var szText = sprintf(TEXT_LAP, iCur, iTot);
+
+    _oText.refreshText(szText);
+  };
+
+  this.refreshRaceTime = function (iMilliseconds) {
+    _oRaceTime.refreshText(formatTimeCustomly(iMilliseconds));
+  };
+
+  this.setVisible = function (bVal) {
+    _oContainer.visible = bVal;
+  };
+
+  this._init();
 }
-
-
