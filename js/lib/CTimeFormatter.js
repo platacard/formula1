@@ -1,4 +1,4 @@
-function formatTime(iMilliseconds) {
+function formatTimeCustomly(iMilliseconds) {
   const iTotalSeconds = Math.floor(iMilliseconds / 1000);
   const iMinutes = Math.floor(iTotalSeconds / 60);
   const iSeconds = iTotalSeconds % 60;
