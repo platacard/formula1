@@ -183,6 +183,7 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
       .call(function () {
         _oParent.unload();
         s_oGame.restartGame();
+        s_oGame.onExit();
       });
   };
 
