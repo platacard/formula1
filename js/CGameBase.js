@@ -117,18 +117,18 @@ CGameBase.prototype._init = function (iLevel) {
     this._oRumbleDrawingLevel,
     this._oGrassDrawingLevel,
     this._oLaneDrawingLevel,
-    this._oRumbleStrokeLevel
+    this._oRumbleStrokeLevel,
   );
 
   this._oPlayer = new CPlayer(
     CANVAS_WIDTH / 2,
     CANVAS_HEIGHT - 180,
-    this._oElementContainer
+    this._oElementContainer,
   );
   this._oPlayer.addEventListener(
     ON_PLAYER_PASSED_LAP,
     this.playerLapPassed,
-    this
+    this,
   );
   //this._oPlayer.addEventListener(ON_PLAYER_HIT, this._onPlayerHit, this);
   //this._oPlayer.addEventListener(ON_PLAYER_HIT_WHILE_COLLIDED, this._onPlayerHitWhileCollided, this);
@@ -148,7 +148,7 @@ CGameBase.prototype._init = function (iLevel) {
     this._aCars,
     this._aEnemy,
     this._oElementContainer,
-    iLevel
+    iLevel,
   );
 
   this.resetParams();
@@ -457,10 +457,9 @@ CGameBase.prototype.update = function () {
       this.raceTimer =
         this.raceTimer ||
         setInterval(() => {
-          requestAnimationFrame(() =>
-            this._oInterface.refreshRaceTime(++this.raceTime)
-          );
-        }, 1);
+          this.raceTime += 10;
+          this._oInterface.refreshRaceTime(this.raceTime);
+        }, 10);
 
       break;
     }
@@ -478,14 +477,14 @@ CGameBase.prototype.update = function () {
   }
 
   this._oInterface.refreshSpeed(
-    this._oPlayer.getCurSpeed() * PLAYER_SPEED_CONVERSION_RATIO
+    this._oPlayer.getCurSpeed() * PLAYER_SPEED_CONVERSION_RATIO,
   );
   this._oInterface.refreshMiniMap(this._oPlayer.getPlayerSegment().index);
 
   this._oRoad.update(this._oPlayer.getPosition());
 
   this._oHorizon.move(
-    this.getWorldCameraPos() /*, this._oRoad.getLastVisibleSegment().clip*/
+    this.getWorldCameraPos() /*, this._oRoad.getLastVisibleSegment().clip*/,
   );
 
   this._bCollision = false;
@@ -526,7 +525,7 @@ CGameBase.prototype._checkAmbientCollision = function (segment) {
       this._oPlayer.getPlayerWidth(),
       oElement.getCollisor().center,
       oElement.getCollisor().width,
-      1
+      1,
     );
     if (bOverlap) {
       this.checkDamage();
@@ -535,7 +534,7 @@ CGameBase.prototype._checkAmbientCollision = function (segment) {
       var oSegment = this._oPlayer.getPlayerSegment();
 
       this._oPlayer.setPosition(
-        Util.increase(oSegment.p1.world.z, -PLAYER_Z_FROMCAMERA, TRACK_LENGTH)
+        Util.increase(oSegment.p1.world.z, -PLAYER_Z_FROMCAMERA, TRACK_LENGTH),
       );
 
       this._bCollision = true;
@@ -558,7 +557,7 @@ CGameBase.prototype._checkEnemiesCollision = function (segment) {
       this._oPlayer.getPlayerWidth(),
       oEnemy.getOffset(),
       iEnemyW,
-      0.6
+      0.6,
     );
 
     var bStateCondition =
@@ -572,7 +571,7 @@ CGameBase.prototype._checkEnemiesCollision = function (segment) {
       if (bSpeedToCheckDamage) {
         this.checkDamage();
         this._oPlayer.setCurSpeed(
-          oEnemy.getSpeed() * (oEnemy.getSpeed() / this._oPlayer.getCurSpeed())
+          oEnemy.getSpeed() * (oEnemy.getSpeed() / this._oPlayer.getCurSpeed()),
         );
 
         this._bCollision = true;
@@ -613,7 +612,7 @@ CGameBase.prototype.getRelativeEnemyZPosToPlayer = function (oEnemy) {
 CGameBase.prototype.setPlayerDamage = function (
   iAmount,
   iRelativeXPos,
-  iRelativeZ
+  iRelativeZ,
 ) {
   if (this._bDamaged) {
     return;
