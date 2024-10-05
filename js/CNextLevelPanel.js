@@ -101,7 +101,7 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
       1,
       0,
       0,
-      "Your Time",
+      "Tu tiempo:",
       true,
       true,
       false,
