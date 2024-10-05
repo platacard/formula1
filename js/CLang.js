@@ -1,32 +1,31 @@
-var TEXT_PRELOADER_CONTINUE = "START";
-var TEXT_GAMEOVER = "CONGRATULATIONS! YOU COMPLETED ALL TRACKS!";
-var TEXT_SCORE = "SCORE";
-var TEXT_GO = "GO!";
+var TEXT_PRELOADER_CONTINUE = "COMENZAR";
+var TEXT_GAMEOVER = "¡FELICIDADES! ¡COMPLETASTE TODAS LAS PISTAS!";
+var TEXT_SCORE = "PUNTUACIÓN";
+var TEXT_GO = "¡VAMOS!";
 var TEXT_SPEED_INDICATOR = "Km/h";
-var TEXT_SAVE_REMOVE =
-  "THIS WILL REMOVE ALL YOUR ACHIEVEMENTS! DO YOU WANT TO PROCEED?";
-var TEXT_ARE_SURE = "ARE YOU SURE?";
-var TEXT_TRACK_COMPLETED = "TRACK COMPLETED";
+var TEXT_SAVE_REMOVE = "¡ESTO ELIMINARÁ TODOS TUS LOGROS! ¿QUIERES CONTINUAR?";
+var TEXT_ARE_SURE = "¿ESTÁS SEGURO?";
+var TEXT_TRACK_COMPLETED = "PISTA COMPLETADA";
 var TEXT_LOSE =
-  "YOU RANKED %s! FINISH IN THE TOP %s TO ADVANCE TO THE NEXT RACE!";
-var TEXT_TRACK = "TRACK %s";
+  "¡QUEDASTE EN EL PUESTO %s! ¡TERMINA ENTRE LOS PRIMEROS %s PARA AVANZAR A LA SIGUIENTE CARRERA!";
+var TEXT_TRACK = "PISTA %s";
 
 var TEXT_HELP1 =
-  "USE ARROW KEY TO MOVE THE CAR: UP FOR ACCELERATION AND DOWN FOR BRAKE";
-var TEXT_HELP1_MOBILE = "USE BUTTONS TO MOVE THE CAR";
-var TEXT_HELP2 = "HAVE A GREAT RACE!";
+  "USA LAS TECLAS DE FLECHA PARA MOVER EL COCHE: ARRIBA PARA ACELERAR Y ABAJO PARA FRENAR";
+var TEXT_HELP1_MOBILE = "USA LOS BOTONES PARA MOVER EL COCHE";
+var TEXT_HELP2 = "¡QUE TENGAS UNA GRAN CARRERA!";
 
-var TEXT_DEVELOPED = "DEVELOPED BY";
+var TEXT_DEVELOPED = "DESARROLLADO POR";
 
 var TEXT_IOS_PRIVATE =
-  'Your web browser does not support storing settings locally. In Safari, the most common cause of this is using "Private Browsing Mode". Some info may not save or some features may not work properly';
+  'Tu navegador web no soporta guardar configuraciones localmente. En Safari, la causa más común es usar el "Modo de Navegación Privada". Algunas funciones pueden no guardarse o no funcionar correctamente';
 
 var TEXT_LAP = "%s / %s";
 
 var TEXT_SHARE_IMAGE = "200x200.jpg";
-var TEXT_SHARE_TITLE = "Congratulations!";
-var TEXT_SHARE_MSG1 = "You collected <strong>";
+var TEXT_SHARE_TITLE = "¡Felicidades!";
+var TEXT_SHARE_MSG1 = "Has recolectado <strong>";
 var TEXT_SHARE_MSG2 =
-  " points</strong>!<br><br>Share your score with your friends!";
-var TEXT_SHARE_SHARE1 = "My score is ";
-var TEXT_SHARE_SHARE2 = " points! Can you do better";
+  " puntos</strong>!<br><br>¡Comparte tu puntuación con tus amigos!";
+var TEXT_SHARE_SHARE1 = "Mi puntuación es ";
+var TEXT_SHARE_SHARE2 = " puntos! ¿Puedes superarla?";

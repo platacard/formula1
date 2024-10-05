@@ -101,7 +101,7 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
       1,
       0,
       0,
-      "Your Time",
+      "Tu tiempo:",
       true,
       true,
       false,
@@ -161,16 +161,18 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
   };
 
   this._onContinue = function () {
-    _oRestartBut.setClickable(false);
-    _oContinueBut.setClickable(false);
+    // _oRestartBut.setClickable(false);
+    // _oContinueBut.setClickable(false);
+    window.parent.postMessage({ type: "FINISH_F1_RACE" }, "*");
 
-    new createjs.Tween.get(_oFade).to({ alpha: 0 }, 500);
-    new createjs.Tween.get(_oPanelContainer)
-      .to({ y: _pStartPanelPos.y }, 400, createjs.Ease.backIn)
-      .call(function () {
-        _oParent.unload();
-        s_oGame.nextLevel();
-      });
+    // new createjs.Tween.get(_oFade).to({ alpha: 0 }, 500);
+    // new createjs.Tween.get(_oPanelContainer)
+    //   .to({ y: _pStartPanelPos.y }, 400, createjs.Ease.backIn)
+    //   .call(function () {
+    //     // _oParent.unload();
+    //     // s_oGame.nextLevel();
+    //
+    //   });
   };
 
   this._onRestart = function () {
