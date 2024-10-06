@@ -15,7 +15,7 @@ var TEXT_HELP1 =
 var TEXT_HELP1_MOBILE = "USA LOS BOTONES PARA MOVER EL COCHE";
 var TEXT_HELP2 = "¡QUE TENGAS UNA GRAN CARRERA!";
 
-var TEXT_DEVELOPED = "DESARROLLADO POR";
+var TEXT_DEVELOPED = "REGLAS PARA PARTICIPAR";
 
 var TEXT_IOS_PRIVATE =
   'Tu navegador web no soporta guardar configuraciones localmente. En Safari, la causa más común es usar el "Modo de Navegación Privada". Algunas funciones pueden no guardarse o no funcionar correctamente';
