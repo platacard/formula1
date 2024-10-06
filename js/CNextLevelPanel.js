@@ -69,6 +69,11 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
         oSprite = s_oSpriteLibrary.getSprite("bronze_cup");
         break;
       }
+
+      default: {
+        oSprite = s_oSpriteLibrary.getSprite("soothing_cup");
+        break;
+      }
     }
 
     var oCup = createBitmap(oSprite);

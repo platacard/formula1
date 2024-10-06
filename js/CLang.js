@@ -25,6 +25,7 @@ var TEXT_LAP = "%s / %s";
 var TEXT_SHARE_IMAGE = "200x200.jpg";
 var TEXT_SHARE_TITLE = "¡Felicidades!";
 var TEXT_SHARE_MSG1 = "Has recolectado <strong>";
+var TEXT_YOUR_TIME = "Tu tiempo: ";
 var TEXT_SHARE_MSG2 =
   " puntos</strong>!<br><br>¡Comparte tu puntuación con tus amigos!";
 var TEXT_SHARE_SHARE1 = "Mi puntuación es ";
