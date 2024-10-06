@@ -78,7 +78,7 @@ function CMenu() {
     var oSprite = s_oSpriteLibrary.getSprite("but_credits");
     _pStartPosCredits = {
       x: oSprite.width / 2 + 10,
-      y: oSprite.height / 2 + 10,
+      y: oSprite.height / 2 + 25,
     };
     _oCreditsBut = new CGfxButton(
       _pStartPosCredits.x,
@@ -94,7 +94,7 @@ function CMenu() {
       var oSprite = s_oSpriteLibrary.getSprite("audio_icon");
       _pStartPosAudio = {
         x: CANVAS_WIDTH - oSprite.height / 2 - 10,
-        y: oSprite.height / 2 + 10,
+        y: oSprite.height / 2 + 25,
       };
       _oAudioToggle = new CToggle(
         _pStartPosAudio.x,
@@ -146,8 +146,8 @@ function CMenu() {
       oSprite = s_oSpriteLibrary.getSprite("but_fullscreen");
 
       _pStartPosFullscreen = {
-        x: _pStartPosCredits.x + oSprite.width / 2 + 10,
-        y: oSprite.height / 2 + 10,
+        x: _pStartPosCredits.x + oSprite.width / 2 + 25,
+        y: oSprite.height / 2 + 25,
         // x: oSprite.width / 2 + 10,
         // y: oSprite.height / 2 + 10,
       };
