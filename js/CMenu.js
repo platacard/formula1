@@ -25,7 +25,7 @@ function CMenu() {
     _oBg.x = CANVAS_WIDTH / 2;
     _oBg.y = CANVAS_HEIGHT / 2;
     _oBg.regX = oSprite.width / 2.15;
-    _oBg.regY = oSprite.height / 2;
+    _oBg.regY = oSprite.height / 2.15;
     _oBg.scale = 1.75;
     s_oStage.addChild(_oBg);
 
