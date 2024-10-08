@@ -65,7 +65,7 @@ function CCreditsPanel() {
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2,
-      iY - iHeight + 150,
+      iY - iHeight / 2 + 100,
       widthShift,
       iHeight,
       ruleFont,
@@ -85,7 +85,7 @@ function CCreditsPanel() {
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2,
-      iY + 120,
+      iY - iHeight / 2 + 170,
       widthShift,
       iHeight,
       ruleFont,
@@ -105,7 +105,7 @@ function CCreditsPanel() {
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2,
-      iY + 190,
+      iY - iHeight / 2 + 240,
       widthShift,
       iHeight,
       ruleFont,
@@ -125,7 +125,7 @@ function CCreditsPanel() {
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2,
-      iY + 290,
+      iY - iHeight / 2 + 320,
       widthShift,
       iHeight,
       ruleFont,
