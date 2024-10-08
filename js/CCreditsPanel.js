@@ -35,16 +35,17 @@ function CCreditsPanel() {
       createjs.Ease.quartIn,
     );
 
-    var iWidth = 500;
+    var iWidth = 600;
     var iHeight = 100;
     var iX = 0;
     var iY = -oSprite.height / 2 + 110;
     const widthShift = iWidth - 100;
+    const ruleFont = 25;
 
     new CTLText(
       _oPanelContainer,
-      iX - iWidth / 2,
-      iY - iHeight,
+      iX - iWidth / 2.05,
+      iY - iHeight / 2 + 30,
       widthShift,
       iHeight,
       40,
@@ -55,90 +56,91 @@ function CCreditsPanel() {
       2,
       2,
       TEXT_DEVELOPED,
-      true,
+      false,
       true,
       false,
-      false,
-    );
+      false
+    ).setStroke(10, "#000");
 
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2,
-      iY + 50,
+      iY - iHeight / 2 + 100,
       widthShift,
       iHeight,
-      30,
+      ruleFont,
       "left",
       "#fff",
       PRIMARY_FONT,
       1,
       2,
       2,
-      "• Completa la carrera con tu mejor\n tiempo",
+      "1. Completa la carrera con tu mejor tiempo",
       false,
       true,
       false,
-      false,
-    );
+      false
+    ).setStroke(10, "#000");
 
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2,
-      iY + 120,
+      iY - iHeight / 2 + 170,
       widthShift,
       iHeight,
-      30,
+      ruleFont,
       "left",
       "#fff",
       PRIMARY_FONT,
       1,
       2,
       2,
-      "• Ingresa tu número de teléfono para\n guardar el resultado",
+      "2. Ingresa tu número de teléfono para\n guardar el resultado",
       false,
       true,
       false,
-      false,
-    );
-    new CTLText(
-      _oPanelContainer,
-      iX - iWidth / 2,
-      iY + 190,
-      widthShift,
-      iHeight,
-      30,
-      "left",
-      "#fff",
-      PRIMARY_FONT,
-      1,
-      2,
-      2,
-      "• Solicita tu tarjeta Plata si aún no la\n tienes. Necesitas ser cliente Plata para\n participar",
-      false,
-      true,
-      false,
-      false,
-    );
+      false
+    ).setStroke(10, "#000");
 
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2,
-      iY + 290,
+      iY - iHeight / 2 + 240,
       widthShift,
       iHeight,
-      30,
+      ruleFont,
       "left",
       "#fff",
       PRIMARY_FONT,
       1,
       2,
       2,
-      "• Sé uno de los 10 mejores de todos los\n corredores para ganar boletos",
+      "3. Solicita tu tarjeta Plata si aún no la\n tienes. Necesitas ser cliente Plata para\n participar",
       false,
       true,
       false,
+      false
+    ).setStroke(10, "#000");
+
+    new CTLText(
+      _oPanelContainer,
+      iX - iWidth / 2,
+      iY - iHeight / 2 + 320,
+      widthShift,
+      iHeight,
+      ruleFont,
+      "left",
+      "#fff",
+      PRIMARY_FONT,
+      1,
+      2,
+      2,
+      "4. Sé uno de los 10 mejores de todos los\n corredores para ganar boletos",
       false,
-    );
+      true,
+      false,
+      false
+    ).setStroke(10, "#000");
 
     // new CTLText(
     //   _oPanelContainer,

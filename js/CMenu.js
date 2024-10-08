@@ -24,15 +24,15 @@ function CMenu() {
     _oBg = createBitmap(oSprite);
     _oBg.x = CANVAS_WIDTH / 2;
     _oBg.y = CANVAS_HEIGHT / 2;
-    _oBg.regX = oSprite.width / 2.15;
-    _oBg.regY = oSprite.height / 2;
-    _oBg.scale = 1.75;
+    _oBg.regX = oSprite.width / 2;
+    _oBg.regY = oSprite.height / 2.15;
+    _oBg.scale = 1.7;
     s_oStage.addChild(_oBg);
 
     var oSprite = s_oSpriteLibrary.getSprite("logo_menu");
     _oLogo = createBitmap(oSprite);
     _oLogo.regX = oSprite.width / 2;
-    _oLogo.regY = oSprite.height / 2;
+    _oLogo.regY = oSprite.height / 2 + 100;
     _oLogo.x = CANVAS_WIDTH / 2;
     _oLogo.y = CANVAS_HEIGHT / 2 - 350;
     _oLogo.scale = 0.6;
