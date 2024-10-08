@@ -35,16 +35,17 @@ function CCreditsPanel() {
       createjs.Ease.quartIn,
     );
 
-    var iWidth = 500;
+    var iWidth = 600;
     var iHeight = 100;
     var iX = 0;
     var iY = -oSprite.height / 2 + 110;
     const widthShift = iWidth - 100;
+    const ruleFont = 25;
 
     new CTLText(
       _oPanelContainer,
-      iX - iWidth / 2,
-      iY - iHeight,
+      iX - iWidth / 2.05,
+      iY - iHeight / 2 + 30,
       widthShift,
       iHeight,
       40,
@@ -55,31 +56,31 @@ function CCreditsPanel() {
       2,
       2,
       TEXT_DEVELOPED,
-      true,
+      false,
       true,
       false,
-      false,
-    );
+      false
+    ).setStroke(10, "#000");
 
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2,
-      iY + 50,
+      iY - iHeight + 150,
       widthShift,
       iHeight,
-      30,
+      ruleFont,
       "left",
       "#fff",
       PRIMARY_FONT,
       1,
       2,
       2,
-      "• Completa la carrera con tu mejor\n tiempo",
+      "1. Completa la carrera con tu mejor tiempo",
       false,
       true,
       false,
-      false,
-    );
+      false
+    ).setStroke(10, "#000");
 
     new CTLText(
       _oPanelContainer,
@@ -87,38 +88,39 @@ function CCreditsPanel() {
       iY + 120,
       widthShift,
       iHeight,
-      30,
+      ruleFont,
       "left",
       "#fff",
       PRIMARY_FONT,
       1,
       2,
       2,
-      "• Ingresa tu número de teléfono para\n guardar el resultado",
+      "2. Ingresa tu número de teléfono para\n guardar el resultado",
       false,
       true,
       false,
-      false,
-    );
+      false
+    ).setStroke(10, "#000");
+
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2,
       iY + 190,
       widthShift,
       iHeight,
-      30,
+      ruleFont,
       "left",
       "#fff",
       PRIMARY_FONT,
       1,
       2,
       2,
-      "• Solicita tu tarjeta Plata si aún no la\n tienes. Necesitas ser cliente Plata para\n participar",
+      "3. Solicita tu tarjeta Plata si aún no la\n tienes. Necesitas ser cliente Plata para\n participar",
       false,
       true,
       false,
-      false,
-    );
+      false
+    ).setStroke(10, "#000");
 
     new CTLText(
       _oPanelContainer,
@@ -126,19 +128,19 @@ function CCreditsPanel() {
       iY + 290,
       widthShift,
       iHeight,
-      30,
+      ruleFont,
       "left",
       "#fff",
       PRIMARY_FONT,
       1,
       2,
       2,
-      "• Sé uno de los 10 mejores de todos los\n corredores para ganar boletos",
+      "4. Sé uno de los 10 mejores de todos los\n corredores para ganar boletos",
       false,
       true,
       false,
-      false,
-    );
+      false
+    ).setStroke(10, "#000");
 
     // new CTLText(
     //   _oPanelContainer,
