@@ -145,7 +145,7 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
         // oScoreText.roll(formatTime(raceTime), 5000,createjs.Ease.cubicOut);
       });
 
-    var oSprite = s_oSpriteLibrary.getSprite("but_next");
+    var oSprite = s_oSpriteLibrary.getSprite("but_yes");
     _oContinueBut = new CGfxButton(120, 100, oSprite, _oPanelContainer);
     _oContinueBut.addEventListener(ON_MOUSE_UP, this._onContinue, this);
     _oContinueBut.pulseAnimation();
