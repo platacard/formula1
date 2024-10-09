@@ -7,84 +7,84 @@ var ELEMENT_INFO = new Array([], [], [], [], [], [], [], [], []);
 ROAD_INFO[0] = [
   {
     roadtype: ROAD.TYPE.STANDARD,
-    length: ROAD.LENGTH.NONE,
+    length: ROAD.LENGTH.LONG,
     curve: ROAD.CURVE.EASY,
   },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.MEDIUM,
-  //   curve: ROAD.CURVE.MEDIUM,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.MEDIUM,
-  //   curve: -ROAD.CURVE.MEDIUM,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.LONG,
-  //   curve: -ROAD.CURVE.EASY,
-  // },
-  // { roadtype: ROAD.TYPE.STANDARD, length: ROAD.LENGTH.LONG },
-  // {
-  //   roadtype: ROAD.TYPE.CURVE_S,
-  //   length: ROAD.LENGTH.LONG,
-  //   curve: ROAD.CURVE.MEDIUM,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.MEDIUM,
-  //   curve: ROAD.CURVE.HARD,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.CURVE_S,
-  //   length: ROAD.LENGTH.MEDIUM,
-  //   curve: ROAD.CURVE.MEDIUM,
-  // },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.MEDIUM,
+    curve: ROAD.CURVE.MEDIUM,
+  },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.MEDIUM,
+    curve: -ROAD.CURVE.MEDIUM,
+  },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.LONG,
+    curve: -ROAD.CURVE.EASY,
+  },
+  { roadtype: ROAD.TYPE.STANDARD, length: ROAD.LENGTH.LONG },
+  {
+    roadtype: ROAD.TYPE.CURVE_S,
+    length: ROAD.LENGTH.LONG,
+    curve: ROAD.CURVE.MEDIUM,
+  },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.MEDIUM,
+    curve: ROAD.CURVE.HARD,
+  },
+  {
+    roadtype: ROAD.TYPE.CURVE_S,
+    length: ROAD.LENGTH.MEDIUM,
+    curve: ROAD.CURVE.MEDIUM,
+  },
 
-  // {
-  //   roadtype: ROAD.TYPE.CURVE_S,
-  //   length: ROAD.LENGTH.MEDIUM,
-  //   curve: ROAD.CURVE.MEDIUM,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.MEDIUM,
-  //   curve: ROAD.CURVE.HARD,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.CURVE_S,
-  //   length: ROAD.LENGTH.LONG,
-  //   curve: ROAD.CURVE.MEDIUM,
-  // },
-  // { roadtype: ROAD.TYPE.STANDARD, length: ROAD.LENGTH.LONG - 2 },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.LONG,
-  //   curve: -ROAD.CURVE.EASY,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.MEDIUM,
-  //   curve: -ROAD.CURVE.MEDIUM,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.MEDIUM,
-  //   curve: ROAD.CURVE.MEDIUM,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.LONG,
-  //   curve: ROAD.CURVE.EASY,
-  // },
-  // {
-  //   roadtype: ROAD.TYPE.STANDARD,
-  //   length: ROAD.LENGTH.LONG,
-  //   curve: ROAD.CURVE.MEDIUM,
-  // },
+  {
+    roadtype: ROAD.TYPE.CURVE_S,
+    length: ROAD.LENGTH.MEDIUM,
+    curve: ROAD.CURVE.MEDIUM,
+  },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.MEDIUM,
+    curve: ROAD.CURVE.HARD,
+  },
+  {
+    roadtype: ROAD.TYPE.CURVE_S,
+    length: ROAD.LENGTH.LONG,
+    curve: ROAD.CURVE.MEDIUM,
+  },
+  { roadtype: ROAD.TYPE.STANDARD, length: ROAD.LENGTH.LONG - 2 },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.LONG,
+    curve: -ROAD.CURVE.EASY,
+  },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.MEDIUM,
+    curve: -ROAD.CURVE.MEDIUM,
+  },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.MEDIUM,
+    curve: ROAD.CURVE.MEDIUM,
+  },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.LONG,
+    curve: ROAD.CURVE.EASY,
+  },
+  {
+    roadtype: ROAD.TYPE.STANDARD,
+    length: ROAD.LENGTH.LONG,
+    curve: ROAD.CURVE.MEDIUM,
+  },
 
-  { roadtype: ROAD.TYPE.FINAL, length: ROAD.LENGTH.SHORT - 12 },
+  { roadtype: ROAD.TYPE.FINAL, length: ROAD.LENGTH.LONG - 12 },
 ];
 LEVEL_INFO[0] = {
   time: 70000,
