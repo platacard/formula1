@@ -79,7 +79,7 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
     var oCup = createBitmap(oSprite);
     oCup.regX = oSprite.width / 2;
     oCup.regY = oSprite.height / 2;
-    oCup.scale = 0.5;
+    oCup.scale = 0.15;
     oRankContainer.addChild(oCup);
 
     var oScoreContainer = new createjs.Container();
