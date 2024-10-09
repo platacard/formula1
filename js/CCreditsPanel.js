@@ -45,7 +45,7 @@ function CCreditsPanel() {
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2.05,
-      iY - iHeight / 2 + 30,
+      iY - iHeight / 2,
       widthShift,
       iHeight,
       40,
@@ -59,13 +59,13 @@ function CCreditsPanel() {
       false,
       true,
       false,
-      false,
+      false
     ).setStroke(10, "#000");
 
     new CTLText(
       _oPanelContainer,
       iX - iWidth / 2.05,
-      iY - iHeight / 2 + 100,
+      iY - iHeight / 2 + 80,
       widthShift,
       iHeight,
       ruleFont,
@@ -79,7 +79,7 @@ function CCreditsPanel() {
       false,
       false,
       true,
-      false,
+      false
     ).setStroke(10, "#000");
 
     var iY = 196;
