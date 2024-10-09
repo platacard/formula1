@@ -457,7 +457,8 @@ CGameBase.prototype.update = function () {
       this.raceTimer =
         this.raceTimer ||
         setInterval(() => {
-          this.raceTime += 10;
+          this._iGameState;
+          this.raceTime += this._iGameState === STATE_GAME_END ? 0 : 10;
           this._oInterface.refreshRaceTime(this.raceTime);
         }, 10);
 

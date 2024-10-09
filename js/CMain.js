@@ -342,7 +342,7 @@ function CMain(oData) {
     s_oSpriteLibrary.addSprite("gold_cup", "./sprites/gold_cup.png");
     s_oSpriteLibrary.addSprite("silver_cup", "./sprites/silver_cup.png");
     s_oSpriteLibrary.addSprite("bronze_cup", "./sprites/bronze_cup.png");
-    s_oSpriteLibrary.addSprite("soothing_cup", "./sprites/soothing_cup.png");
+    s_oSpriteLibrary.addSprite("soothing_cup", "./sprites/no_cup.png");
 
     RESOURCE_TO_LOAD += s_oSpriteLibrary.getNumSprites();
     s_oSpriteLibrary.loadSprites(5);

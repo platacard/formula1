@@ -26,7 +26,7 @@ function CMenu() {
     _oBg.y = CANVAS_HEIGHT / 2;
     _oBg.regX = oSprite.width / 2;
     _oBg.regY = oSprite.height / 2.15;
-    _oBg.scale = 1.7;
+    _oBg.scale = 1;
     s_oStage.addChild(_oBg);
 
     var oSprite = s_oSpriteLibrary.getSprite("logo_menu");

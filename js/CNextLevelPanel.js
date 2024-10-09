@@ -96,42 +96,42 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
     var oScoreTextHeader = new CTLText(
       oScoreContainer,
       -100,
-      -50,
+      -30,
       150,
       50,
-      50,
-      "right",
+      30,
+      "left",
       "#fff",
       PRIMARY_FONT,
       1,
       0,
       0,
-      "Tu tiempo:",
-      true,
+      "TU RESULTADO:",
+      false,
       true,
       false,
-      false,
+      false
     );
     oScoreTextHeader.setStroke(10, "#000");
 
     var oScoreText = new CTLText(
       oScoreContainer,
       -100,
-      -20,
+      20,
       150,
       50,
-      50,
-      "right",
+      30,
+      "left",
       "#fff",
       PRIMARY_FONT,
       1,
       0,
       0,
       formatTimeCustomly(raceTime),
-      true,
+      false,
       true,
       false,
-      false,
+      false
     );
     oScoreText.setStroke(10, "#000");
 
@@ -150,9 +150,49 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
     _oContinueBut.addEventListener(ON_MOUSE_UP, this._onContinue, this);
     _oContinueBut.pulseAnimation();
 
+    new CTLText(
+      _oPanelContainer,
+      90,
+      190,
+      50,
+      50,
+      30,
+      "center",
+      "#fff",
+      PRIMARY_FONT,
+      1.2,
+      0,
+      0,
+      "Guardar",
+      false,
+      true,
+      true,
+      false
+    ).setStroke(10, "#000");
+
     var oSprite = s_oSpriteLibrary.getSprite("but_restart");
     _oRestartBut = new CGfxButton(-120, 100, oSprite, _oPanelContainer);
     _oRestartBut.addEventListener(ON_MOUSE_UP, this._onRestart, this);
+
+    new CTLText(
+      _oPanelContainer,
+      -150,
+      190,
+      50,
+      50,
+      30,
+      "center",
+      "#fff",
+      PRIMARY_FONT,
+      1.2,
+      0,
+      0,
+      "Reintentar",
+      false,
+      true,
+      true,
+      false
+    ).setStroke(10, "#000");
   };
 
   this.unload = function () {
