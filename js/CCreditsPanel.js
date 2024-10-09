@@ -49,7 +49,7 @@ function CCreditsPanel() {
       widthShift,
       iHeight,
       40,
-      "center",
+      "left",
       "#fff",
       PRIMARY_FONT,
       1,
@@ -59,12 +59,12 @@ function CCreditsPanel() {
       false,
       true,
       false,
-      false
+      false,
     ).setStroke(10, "#000");
 
     new CTLText(
       _oPanelContainer,
-      iX - iWidth / 2,
+      iX - iWidth / 2.05,
       iY - iHeight / 2 + 100,
       widthShift,
       iHeight,
@@ -75,92 +75,12 @@ function CCreditsPanel() {
       1,
       2,
       2,
-      "1. Completa la carrera con tu mejor tiempo",
+      `1. Completa la carrera con tu mejor tiempo\n\n2. Ingresa tu número de teléfono para\nguardar el resultado\n\n3. Solicita tu tarjeta Plata si aún no la\n tienes. Necesitas ser cliente Plata para participar\n\n4. Sé uno de los 10 mejores de todos los\n corredores para ganar boletos`,
+      false,
       false,
       true,
       false,
-      false
     ).setStroke(10, "#000");
-
-    new CTLText(
-      _oPanelContainer,
-      iX - iWidth / 2,
-      iY - iHeight / 2 + 170,
-      widthShift,
-      iHeight,
-      ruleFont,
-      "left",
-      "#fff",
-      PRIMARY_FONT,
-      1,
-      2,
-      2,
-      "2. Ingresa tu número de teléfono para\n guardar el resultado",
-      false,
-      true,
-      false,
-      false
-    ).setStroke(10, "#000");
-
-    new CTLText(
-      _oPanelContainer,
-      iX - iWidth / 2,
-      iY - iHeight / 2 + 240,
-      widthShift,
-      iHeight,
-      ruleFont,
-      "left",
-      "#fff",
-      PRIMARY_FONT,
-      1,
-      2,
-      2,
-      "3. Solicita tu tarjeta Plata si aún no la\n tienes. Necesitas ser cliente Plata para\n participar",
-      false,
-      true,
-      false,
-      false
-    ).setStroke(10, "#000");
-
-    new CTLText(
-      _oPanelContainer,
-      iX - iWidth / 2,
-      iY - iHeight / 2 + 320,
-      widthShift,
-      iHeight,
-      ruleFont,
-      "left",
-      "#fff",
-      PRIMARY_FONT,
-      1,
-      2,
-      2,
-      "4. Sé uno de los 10 mejores de todos los\n corredores para ganar boletos",
-      false,
-      true,
-      false,
-      false
-    ).setStroke(10, "#000");
-
-    // new CTLText(
-    //   _oPanelContainer,
-    //   iX - iWidth / 2,
-    //   iY + 300,
-    //   iWidth,
-    //   iHeight,
-    //   40,
-    //   "center",
-    //   "#fff",
-    //   PRIMARY_FONT,
-    //   1,
-    //   2,
-    //   2,
-    //   "Sé uno de los 10 mejores de todos los corredores para ganar boletos",
-    //   true,
-    //   true,
-    //   false,
-    //   false,
-    // );
 
     var iY = 196;
     // var oLink = new CTLText(_oPanelContainer,
