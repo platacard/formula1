@@ -106,11 +106,11 @@ function CNextLevelPanel(iRank, iScore, iLevel, raceTime) {
       1,
       0,
       0,
-      "Tu tiempo:",
+      "TTU RESULTADO:",
       true,
       true,
       false,
-      false,
+      false
     );
     oScoreTextHeader.setStroke(10, "#000");
 
