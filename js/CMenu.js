@@ -25,7 +25,7 @@ function CMenu() {
     _oBg.x = CANVAS_WIDTH / 2;
     _oBg.y = CANVAS_HEIGHT / 2;
     _oBg.regX = oSprite.width / 2;
-    _oBg.regY = oSprite.height / 2.15;
+    _oBg.regY = oSprite.height / 2;
     _oBg.scale = 1;
     s_oStage.addChild(_oBg);
 
@@ -35,7 +35,7 @@ function CMenu() {
     _oLogo.regY = oSprite.height / 2 + 100;
     _oLogo.x = CANVAS_WIDTH / 2;
     _oLogo.y = CANVAS_HEIGHT / 2 - 350;
-    _oLogo.scale = 0.6;
+    _oLogo.scale = 0.9;
     s_oStage.addChild(_oLogo);
 
     var oSpriteStart = s_oSpriteLibrary.getSprite("but_play");
@@ -43,7 +43,7 @@ function CMenu() {
       CANVAS_WIDTH / 2,
       CANVAS_HEIGHT / 2 + 500,
       oSpriteStart,
-      s_oStage,
+      s_oStage
     );
     _oButPlay.addEventListener(ON_MOUSE_UP, this._onButPlayRelease, this);
     _oButPlay.pulseAnimation();
@@ -85,7 +85,7 @@ function CMenu() {
       _pStartPosCredits.x,
       _pStartPosCredits.y,
       oSprite,
-      s_oStage,
+      s_oStage
     );
     // _oCreditsBut.setVisible(false);
     // _oCreditsBut.setClickable(false);
@@ -102,7 +102,7 @@ function CMenu() {
         _pStartPosAudio.y,
         oSprite,
         s_bAudioActive,
-        s_oStage,
+        s_oStage
       );
       _oAudioToggle.addEventListener(ON_MOUSE_UP, this._onAudioToggle, this);
     }
@@ -116,7 +116,7 @@ function CMenu() {
       _pStartPosDelete.x,
       _pStartPosDelete.y,
       oSprite,
-      s_oStage,
+      s_oStage
     );
 
     _oButDelete.setVisible(false);
@@ -157,12 +157,12 @@ function CMenu() {
         _pStartPosFullscreen.y,
         oSprite,
         s_bFullscreen,
-        s_oStage,
+        s_oStage
       );
       _oButFullscreen.addEventListener(
         ON_MOUSE_UP,
         this._onFullscreenRelease,
-        this,
+        this
       );
     }
 
@@ -209,36 +209,36 @@ function CMenu() {
       // _oScoreContainer.x = s_iOffsetX + 60;
       // _oScoreContainer.y = CANVAS_HEIGHT - 60 -s_iOffsetY;
 
-      _oLogo.y = CANVAS_HEIGHT / 2 - 310;
+      _oLogo.y = CANVAS_HEIGHT / 2 - 250;
     } else {
-      _oButPlay.setPosition(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2 + 500);
+      _oButPlay.setPosition(CANVAS_WIDTH / 2, CANVAS_HEIGHT - 150 - s_iOffsetY);
       // _oScoreContainer.y = _oButPlay.getY()+210;
       // _oScoreContainer.x = _oButPlay.getX() - _oScoreText.getTextWidth()/2;
 
-      _oLogo.y = CANVAS_HEIGHT / 2 - 350;
+      _oLogo.y = CANVAS_HEIGHT / 2 - 400;
     }
 
     if (DISABLE_SOUND_MOBILE === false || s_bMobile === false) {
       _oAudioToggle.setPosition(
         _pStartPosAudio.x - s_iOffsetX,
-        s_iOffsetY + _pStartPosAudio.y,
+        s_iOffsetY + _pStartPosAudio.y
       );
     }
 
     if (_fRequestFullScreen && screenfull.isEnabled) {
       _oButFullscreen.setPosition(
         _pStartPosFullscreen.x + s_iOffsetX,
-        _pStartPosFullscreen.y + s_iOffsetY,
+        _pStartPosFullscreen.y + s_iOffsetY
       );
     }
 
     _oCreditsBut.setPosition(
       _pStartPosCredits.x + s_iOffsetX,
-      s_iOffsetY + _pStartPosCredits.y,
+      s_iOffsetY + _pStartPosCredits.y
     );
     _oButDelete.setPosition(
       _pStartPosDelete.x - s_iOffsetX,
-      _pStartPosDelete.y - s_iOffsetY,
+      _pStartPosDelete.y - s_iOffsetY
     );
   };
 

@@ -37,15 +37,27 @@ function CHelpPanel(){
         new createjs.Tween.get(_oPanelContainer).to({y:CANVAS_HEIGHT/2 - 40},500, createjs.Ease.cubicOut);
 
         if(s_bMobile){
-            var oText1Pos = {x: -250, y: -180};
+            var oText1Pos = { x: -250, y: -210 };
 
-            _oText1 = new CTLText(_oPanelContainer, 
-                    oText1Pos.x, oText1Pos.y, 500, 48, 
-                    30, "center", "#fff", PRIMARY_FONT, 1,
-                    0, 0,
-                    TEXT_HELP1_MOBILE,
-                    true, true, true,
-                    false );
+            _oText1 = new CTLText(
+              _oPanelContainer,
+              oText1Pos.x,
+              oText1Pos.y,
+              500,
+              96,
+              70,
+              "center",
+              "#fff",
+              PRIMARY_FONT,
+              1,
+              0,
+              0,
+              TEXT_HELP1_MOBILE,
+              true,
+              true,
+              true,
+              false
+            );
             _oText1.setStroke(6,"#000");        
 
 
