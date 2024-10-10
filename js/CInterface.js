@@ -194,7 +194,8 @@ function CInterface(){
           _pStartPosDown.x,
           _pStartPosDown.y,
           oSprite,
-          oInterfaceContainer
+          oInterfaceContainer,
+          1.5
         );
         _oButDown.addEventListenerWithParams(
           ON_MOUSE_UP,
@@ -211,14 +212,13 @@ function CInterface(){
 
         ///////////// DIRECTION
         var oSprite = s_oSpriteLibrary.getSprite("key_left");
-        oSprite.scaleX = scaleFactor; // Увеличиваем ширину
-        oSprite.scaleY = scaleFactor; // Увеличиваем высоту
-        _pStartPosLeft = { x: iX - oSprite.width / 2, y: iY - 160 };
+        _pStartPosLeft = { x: iX - 50, y: iY - 160 };
         _oButLeft = new CGfxButton(
           _pStartPosLeft.x,
           _pStartPosLeft.y,
           oSprite,
-          oInterfaceContainer
+          oInterfaceContainer,
+          2
         );
         _oButLeft.addEventListenerWithParams(
           ON_MOUSE_UP,
@@ -235,20 +235,22 @@ function CInterface(){
 
         var oSprite = s_oSpriteLibrary.getSprite("key_right");
         _pStartPosRight = {
-          x: CANVAS_WIDTH - iX + oSprite.width / 2,
+          x: CANVAS_WIDTH - iX + 50,
           y: iY - 160,
         };
         _oButRight = new CGfxButton(
           _pStartPosRight.x,
           _pStartPosRight.y,
           oSprite,
-          oInterfaceContainer
+          oInterfaceContainer,
+          2
         );
         _oButRight.addEventListenerWithParams(
           ON_MOUSE_UP,
           s_oGame.onKeyUp,
           s_oGame,
-          KEY_RIGHT
+          KEY_RIGHT,
+          2
         );
         _oButRight.addEventListenerWithParams(
           ON_MOUSE_DOWN,
