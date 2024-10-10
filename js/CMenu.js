@@ -32,7 +32,7 @@ function CMenu() {
     var oSprite = s_oSpriteLibrary.getSprite("logo_menu");
     _oLogo = createBitmap(oSprite);
     _oLogo.regX = oSprite.width / 2;
-    _oLogo.regY = oSprite.height / 2 + 100;
+    _oLogo.regY = oSprite.height / 2;
     _oLogo.x = CANVAS_WIDTH / 2;
     _oLogo.y = CANVAS_HEIGHT / 2 - 350;
     _oLogo.scale = 0.9;
