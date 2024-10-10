@@ -195,7 +195,7 @@ function CInterface(){
           _pStartPosDown.y,
           oSprite,
           oInterfaceContainer,
-          1.5
+          2
         );
         _oButDown.addEventListenerWithParams(
           ON_MOUSE_UP,
