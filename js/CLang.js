@@ -20,7 +20,7 @@ var TEXT_DEVELOPED = "REGLAS PARA PARTICIPAR";
 var TEXT_IOS_PRIVATE =
   'Tu navegador web no soporta guardar configuraciones localmente. En Safari, la causa más común es usar el "Modo de Navegación Privada". Algunas funciones pueden no guardarse o no funcionar correctamente';
 
-var TEXT_LAP = "%s / %s";
+var TEXT_LAP = "0 / 1";
 
 var TEXT_SHARE_IMAGE = "200x200.jpg";
 var TEXT_SHARE_TITLE = "¡Felicidades!";
