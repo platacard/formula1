@@ -256,7 +256,7 @@ CGameRace.prototype.trackCompleted = function () {
     }
     $(s_oMain).trigger("save_score", {
       score: iTotalScore,
-      raceTime: this.raceTime,
+      raceTime: Math.round(this.raceTime * 1000),
     });
   } else {
     var oLosePanel = new CLosePanel(iPlayerRank);

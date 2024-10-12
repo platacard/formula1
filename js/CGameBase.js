@@ -454,13 +454,9 @@ CGameBase.prototype.update = function () {
       this._oPlayer.update(iDt);
 
       this.updateRace(iDt);
-      this.raceTimer =
-        this.raceTimer ||
-        setInterval(() => {
-          this._iGameState;
-          this.raceTime += this._iGameState === STATE_GAME_END ? 0 : 10;
-          this._oInterface.refreshRaceTime(this.raceTime);
-        }, 10);
+
+      this.raceTime += this._iGameState === STATE_GAME_END ? 0 : iDt;
+      this._oInterface.refreshRaceTime(this.raceTime);
 
       break;
     }
@@ -469,9 +465,6 @@ CGameBase.prototype.update = function () {
       this._oPlayer.autoPilot();
 
       this.updateOpponents(iDt);
-      clearInterval(this.raceTimer);
-      this.raceTimer = 0;
-      // this.resetParams();
 
       break;
     }
