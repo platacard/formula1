@@ -75,7 +75,7 @@ function CCreditsPanel() {
       1,
       2,
       2,
-      `1. Completa la carrera con tu mejor tiempo\n\n2. Ingresa tu número de teléfono para\nguardar el resultado\n\n3. Solicita tu tarjeta Plata si aún no la\n tienes. Necesitas ser cliente Plata para participar\n\n4. Sé uno de los 10 mejores de todos los\n corredores para ganar boletos`,
+      `1. Completa la carrera con tu mejor tiempo\n\n2. Ingresa tu número de teléfono para\nguardar el resultado\n\n3. Solicita tu tarjeta Plata si aún no la\n tienes. Necesitas ser cliente Plata para participar\n\n4. Sé uno de los 3 mejores de todos los\n corredores para ganar boletos`,
       false,
       false,
       true,
